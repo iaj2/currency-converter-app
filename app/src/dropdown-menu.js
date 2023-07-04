@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {ReactComponent as CanadaFlagIcon} from './icons/canada-flag-icon.svg';
-import {ReactComponent as GBFlagIcon} from './icons/united-kingdom-flag-icon.svg';
+import {ReactComponent as GBFlagIcon} from './icons/uk-flag-icon.svg';
 
 
 function DropdownMenu({ className, triggerIcon, selectedItem}) {

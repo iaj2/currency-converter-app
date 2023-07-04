@@ -1,12 +1,12 @@
-import {React, useState} from 'react';
+import React, {useState} from 'react';
 import DropdownMenu from './dropdown-menu'
-import {ReactComponent as CanadaFlagIcon} from './icons/canada-flag-icon.svg';
-import {ReactComponent as GBFlagIcon} from './icons/united-kingdom-flag-icon.svg';
+import {ReactComponent as CanadaFlagIcon} from './icons/canada-flag-icon.svg'
+import {ReactComponent as UKFlagIcon} from './icons/uk-flag-icon.svg';
 
 function App() {
   const [triggerIconFrom, setTriggerIconFrom] = useState(<CanadaFlagIcon />);
   const [selectedFrom, setSelectedFrom] = useState('CAD');
-  const [triggerIconTo, setTriggerTo] = useState(<GBFlagIcon />);
+  const [triggerIconTo, setTriggerTo] = useState(<UKFlagIcon />);
   const [selectedTo, setSelectedTo] = useState('GBP');
 
   return (

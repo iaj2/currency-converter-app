@@ -60,11 +60,11 @@ code {
 }
 
 .dropdown-container.from-currency{
-  transform: translate(100px, 0px);
+  transform: translate(150px, 0px);
 }
 
 .dropdown-container.to-currency{
-  transform: translate(350px, 9px);
+  transform: translate(550px, 9px);
 }
 
 .dropdown-trigger{
@@ -80,8 +80,8 @@ code {
 }
 
 .dropdown-trigger > svg{
-  width: 75%;
-  height: 75%;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
 }
 
