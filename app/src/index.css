@@ -64,6 +64,14 @@ code {
   height: 50px; 
 }
 
+.selected-item-name{
+  position:absolute;
+  top: -20px;
+  font-family: 'Lucida Sans Regular', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .dropdown-trigger-container.from-currency{
   transform: translate(150px, 0px);
 }
@@ -141,7 +149,9 @@ code {
   justify-content: space-between;
   width: 95%;
   height: calc(var(--dropdown-menu-height) / 5); 
+  margin: 8px 0 -8px 0;
   background-color: inherit;
+  border-radius: 5px;;
 }
 
 .dropdown-icon{
@@ -171,7 +181,7 @@ code {
 .dropdown-item-underline{
   position: absolute;
   left: calc(50% - 100px);
-  top: calc(100% - 4px);
+  top: calc(100% - 2px);
   width: 200px;
   height: 2px;
   background-color: #67676722;

@@ -14,10 +14,19 @@ function App() {
     <h1 className='app-title'>Currency Converter</h1>
     <h3 className='app-subtitle'>Check live foreign currency exchange rates</h3>
     <div className='conversion-container'>
-      <DropdownMenu className="from-currency" triggerIcon={triggerIconFrom} setTriggerIcon={setTriggerIconFrom} 
-        selectedI={selectedFrom} setSelectedI={setSelectedFrom}/>
-      <DropdownMenu className="to-currency" triggerIcon={triggerIconTo} setTriggerIcon={setTriggerIconTo}
-        selected={selectedTo} setSelected={setSelectedTo}/>
+      <DropdownMenu 
+        className="from-currency" 
+        triggerIcon={triggerIconFrom} 
+        setTriggerIcon={setTriggerIconFrom} 
+        selected={selectedFrom} 
+        setSelected={setSelectedFrom}
+        />
+      <DropdownMenu className="to-currency" 
+        triggerIcon={triggerIconTo} 
+        setTriggerIcon={setTriggerIconTo}
+        selected={selectedTo} 
+        setSelected={setSelectedTo}
+        />
     </div>
   </div>
   );
