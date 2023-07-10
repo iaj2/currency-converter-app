@@ -146,7 +146,7 @@ code {
 .dropdown-item-container{
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   width: 95%;
   height: calc(var(--dropdown-menu-height) / 5); 
   margin: 8px 0 -8px 0;
@@ -171,9 +171,9 @@ code {
 }
 
 .dropdown-item-name{
-  margin: auto;
+  margin-left: 12px;
   font-family: 'Lucida Sans', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
   color: #ffffff;
 }
