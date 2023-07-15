@@ -151,7 +151,7 @@ code {
   height: calc(var(--dropdown-menu-height) / 5); 
   margin: 8px 0 -8px 0;
   background-color: inherit;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 
 .dropdown-icon{
@@ -171,7 +171,15 @@ code {
 }
 
 .dropdown-item-name{
-  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  overflow: hidden;
+  word-wrap: break-word;
+  width: 175px;
+  height: 40px;
+  margin: auto;
+  margin-left: 15px;
   font-family: 'Lucida Sans', sans-serif;
   font-size: 0.86rem;
   font-weight: 500;

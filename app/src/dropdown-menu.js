@@ -35,7 +35,7 @@ function DropdownMenu({ className, triggerIcon, setTriggerIcon, selected, setSel
       { icon: <RUSFlagIcon />, name: "RUB"},
       { icon: <SAFlagIcon />, name: "ZAR"},
       { icon: <MXFlagIcon />, name: "MXN"},
-      { icon: <UAEFlagIcon />, name: "UAE"}
+      { icon: <UAEFlagIcon />, name: "AED"}
     ];
 
     return (
@@ -74,7 +74,7 @@ function DropdownItem({icon, name, onClick}){
     'RUB': 'RUB - Russian Rouble',
     'ZAR': 'ZAR - South African Rand',
     'MXN': 'MXN - Mexican Peso',
-    'UAE': 'UAE - United Arab Emirates Dirham',
+    'AED': 'AED - United Arab Emirates Dirham',
     'USD': 'USD - US Dollar'
   }
 
