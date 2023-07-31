@@ -48,13 +48,14 @@ function DropdownMenu({ className, triggerIcon, setTriggerIcon, selected, setSel
         {open && (
           <div className="dropdown-container">
             <div className="dropdown-container-inner">
-              {dropdownItems.map(item => (
-                <DropdownItem
-                  icon={item.icon}
-                  name={item.name}
-                  onClick={() => handleDropdownItemClick(item.icon, item.name)}
-                />
-              ))}
+            {dropdownItems.map((item, index) => (
+              <DropdownItem
+                key={index}
+                icon={item.icon}
+                name={item.name}
+                onClick={() => handleDropdownItemClick(item.icon, item.name)}
+              />
+            ))}
             </div>
           </div>
         )}
