@@ -3,9 +3,9 @@ import React from 'react';
 function CustomButton({className, icon}){
     return (
         <div className={className}>
-            <a href='#'>
+            <button>
                 {icon}
-            </a>
+            </button>
         </div>
     )
 }

@@ -13,6 +13,23 @@ function App() {
   const [triggerIconTo, setTriggerIconTo] = useState(<UKFlagIcon />);
   const [selectedTo, setSelectedTo] = useState('GBP');
 
+  useEffect(() => {
+    // Function to make the API call to get exchange data
+    const fetchExchangeData = async () => {
+      try {
+        const response = await fetch('http://localhost:5500');
+        const jsonData = await response.json();
+        setExchangeData(jsonData);
+        
+      }
+      catch{
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchExchangeData();
+  }, []); 
+
   return (
   <div className='App'>
     <h1 className='app-title'>Currency Converter</h1>
