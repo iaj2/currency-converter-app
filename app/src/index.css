@@ -126,7 +126,6 @@ code {
 
 .dropdown-container-inner{
   display: flex;
-  justify-content:flex-start;
   align-items: center;
   flex-direction: column;
   width: inherit;
@@ -199,4 +198,48 @@ code {
 .dropdown-item-container:hover{
   filter: brightness(1.6);
   cursor:pointer;
+}
+
+.CustomTextField{
+  position: absolute;
+  margin: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none;
+  height: 70px;
+  width: 180px;
+}
+
+.CustomTextField > input {
+  height: 80%;
+  width: 98%;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: larger;
+  font-family: 'Lucida Sans',sans-serif;
+  padding-left: 8px;
+}
+
+.CustomTextField > label {
+  position: absolute;
+  margin: 80px 15px 0px 0px;
+  font-size: 0.7rem;
+  color:#950000;
+  font-family: 'Lucida Sans',sans-serif;;
+}
+
+.convert-button{
+  position: absolute;
+  background-color: #2f4f9b;
+  width:50px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px;
+  transform: translateX(730px);
+  box-shadow: 2px 4px 7px rgb(0, 0, 0, 0.5);
+}
+
+.convert-button > a {
+  filter: invert(100%);
 }
