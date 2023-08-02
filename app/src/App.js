@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import DropdownMenu from './dropdown-menu'
+import DropdownMenu from './dropdown-menu';
+import CustomTextField from './customTextField';
+import CustomButton from './customButton';
 import {ReactComponent as CanadaFlagIcon} from './icons/canada-flag-icon.svg'
 import {ReactComponent as UKFlagIcon} from './icons/uk-flag-icon.svg';
+import { ReactComponent as RightArrowIcon } from './icons/right-arrow.svg';
 
 function App() {
   const [exchangeData, setExchangeData] = useState(null);
@@ -9,20 +12,6 @@ function App() {
   const [selectedFrom, setSelectedFrom] = useState('CAD');
   const [triggerIconTo, setTriggerIconTo] = useState(<UKFlagIcon />);
   const [selectedTo, setSelectedTo] = useState('GBP');
-
-  useEffect(() => {
-    const fectchExchangeData = async () => {
-      try{
-        const response = await fetch("http://localhost:5000");
-        const data = response.json();
-        setExchangeData(data);
-      } catch (error) {
-        console.error('Error fetching exchange data: ', error);
-      }
-    }
-
-    fectchExchangeData();
-  }, [])
 
   return (
   <div className='App'>
@@ -36,12 +25,21 @@ function App() {
         selected={selectedFrom} 
         setSelected={setSelectedFrom}
         />
+      <CustomTextField
+        label={textFieldLabel}
+        value={textFieldValue}
+        onChange={handleTextFieldInput}
+       />
       <DropdownMenu className="to-currency" 
         triggerIcon={triggerIconTo} 
         setTriggerIcon={setTriggerIconTo}
         selected={selectedTo} 
         setSelected={setSelectedTo}
         />
+      <CustomButton
+      className="convert-button"
+      icon={<RightArrowIcon />}
+      />
     </div>
   </div>
   );
