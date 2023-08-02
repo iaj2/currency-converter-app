@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import DropdownMenu from './dropdown-menu'
+import DropdownMenu from './dropdown-menu';
 import CustomTextField from './customTextField';
+import CustomButton from './customButton';
 import {ReactComponent as CanadaFlagIcon} from './icons/canada-flag-icon.svg'
 import {ReactComponent as UKFlagIcon} from './icons/uk-flag-icon.svg';
+import { ReactComponent as RightArrowIcon } from './icons/right-arrow.svg';
 
 function App() {
   const [triggerIconFrom, setTriggerIconFrom] = useState(<CanadaFlagIcon />);
@@ -62,6 +64,10 @@ function App() {
         selected={selectedTo} 
         setSelected={setSelectedTo}
         />
+      <CustomButton
+      className="convert-button"
+      icon={<RightArrowIcon />}
+      />
     </div>
   </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function customButton({className, icon}){
+function CustomButton({className, icon}){
     return (
         <div className={className}>
             <a href='#'>
@@ -10,4 +10,4 @@ function customButton({className, icon}){
     )
 }
 
-export default customButton
+export default CustomButton;

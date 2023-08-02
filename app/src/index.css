@@ -228,3 +228,18 @@ code {
   color:#950000;
   font-family: 'Lucida Sans',sans-serif;;
 }
+
+.convert-button{
+  position: absolute;
+  background-color: #2f4f9b;
+  width:50px;
+  height: 50px;
+  border-radius: 5px;
+  padding: 5px;
+  transform: translateX(730px);
+  box-shadow: 2px 4px 7px rgb(0, 0, 0, 0.5);
+}
+
+.convert-button > a {
+  filter: invert(100%);
+}
