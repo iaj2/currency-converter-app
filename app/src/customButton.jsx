@@ -1,11 +1,11 @@
 import React from 'react';
 
-function CustomButton({className, icon}){
+function CustomButton({className, icon, onClick}){
     return (
-        <div className={className}>
-            <button>
+        <div className={className} onClick={onClick}>
+            <a href='#'>
                 {icon}
-            </button>
+            </a>
         </div>
     )
 }
