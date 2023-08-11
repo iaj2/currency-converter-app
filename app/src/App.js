@@ -6,16 +6,19 @@ import CustomButton from './customButton';
 import {ReactComponent as CanadaFlagIcon} from './icons/canada-flag-icon.svg'
 import {ReactComponent as UKFlagIcon} from './icons/uk-flag-icon.svg';
 import { ReactComponent as RightArrowIcon } from './icons/right-arrow.svg';
+import { ReactComponent as SwapIcon } from './icons/swap-icon.svg';
 
 function App() {
   const [exchangeData, setExchangeData] = useState(null);
   const [triggerIconFrom, setTriggerIconFrom] = useState(<CanadaFlagIcon />);
   const [selectedFrom, setSelectedFrom] = useState('CAD');
   const [triggerIconTo, setTriggerIconTo] = useState(<UKFlagIcon />);
+  const [conversionContainerHeight, setConversionContainerHeight] = useState('200px');
   const [selectedTo, setSelectedTo] = useState('GBP');
   const [textFieldValue, setTextFieldValue] = useState('1.00');
   const [textFieldLabel, setTextFieldLabel] = useState('');
   const [result, setResult] = useState(null);
+  const [resultCurrency, setResultCurrency] = useState(null);
 
   const handleTextFieldInput = (e) => {
     const inputValue = e.target.value;
@@ -28,6 +31,15 @@ function App() {
     }
   }
 
+  const swapCurrencies = () => {
+    const tmpSelected = selectedFrom;
+    const tmpIcon = triggerIconFrom;
+    setTriggerIconFrom(triggerIconTo);
+    setTriggerIconTo(tmpIcon);
+    setSelectedFrom(selectedTo);
+    setSelectedTo(tmpSelected);
+  }
+
   const calculateResult = () => {
     if(!exchangeData){
       console.log("Can't calculate result because of no exchange data");
@@ -38,13 +50,12 @@ function App() {
       return;
     }
     // Expand conversion container to display result
-    const conversionContainer = document.querySelector("conversion-container")
-    conversionContainer.style.height;
-
+    setConversionContainerHeight('300px');
     // Set the result
     const exchangeRate = parseFloat(exchangeData[selectedFrom][selectedTo]);
     const result = (parseFloat(textFieldValue)*exchangeRate).toLocaleString('en');
-    setResult(result)
+    setResult(result);
+    setResultCurrency(selectedTo);
   }
 
   useEffect(() => {
@@ -69,34 +80,45 @@ function App() {
   <div className='App'>
     <h1 className='app-title'>Currency Converter</h1>
     <h3 className='app-subtitle'>Check live foreign currency exchange rates</h3>
-    <div className='conversion-container'>
-      <DropdownMenu 
-        className="from-currency" 
-        triggerIcon={triggerIconFrom} 
-        setTriggerIcon={setTriggerIconFrom} 
-        selected={selectedFrom} 
-        setSelected={setSelectedFrom}
+    <div className='conversion-container'
+      style={{height: conversionContainerHeight}}
+    >
+      <div className='conversion-fields-wrapper'>
+        <DropdownMenu 
+          className="from-currency" 
+          triggerIcon={triggerIconFrom} 
+          setTriggerIcon={setTriggerIconFrom} 
+          selected={selectedFrom} 
+          setSelected={setSelectedFrom}
+          />
+        <CustomTextField
+          label={textFieldLabel}
+          value={textFieldValue}
+          onChange={handleTextFieldInput}
         />
-      <CustomTextField
-        label={textFieldLabel}
-        value={textFieldValue}
-        onChange={handleTextFieldInput}
-       />
-      <DropdownMenu className="to-currency" 
-        triggerIcon={triggerIconTo} 
-        setTriggerIcon={setTriggerIconTo}
-        selected={selectedTo} 
-        setSelected={setSelectedTo}
+        <CustomButton
+          className="custom-button swap-button"
+          icon={<SwapIcon />}
+          onClick={swapCurrencies}
         />
-      <CustomButton
-      className="convert-button"
-      icon={<RightArrowIcon />}
-      onClick = {calculateResult}
-      />
-      {exchangeData && result? (
-        <h2>{result} {selectedTo}</h2>
-      ):<h2>Sorry, something Went Wrong.</h2>}
+        <DropdownMenu className="to-currency" 
+          triggerIcon={triggerIconTo} 
+          setTriggerIcon={setTriggerIconTo}
+          selected={selectedTo} 
+          setSelected={setSelectedTo}
+          />
+        <CustomButton
+          className="custom-button convert-button"
+          icon={<RightArrowIcon />}
+          onClick ={calculateResult}
+        />
     </div>
+    {result? (
+        <div className='result-container'>
+          <h1 className='result-text'> = {result} {resultCurrency}</h1>
+        </div>
+      ):<></>}
+      </div>
   </div>
   );
 }

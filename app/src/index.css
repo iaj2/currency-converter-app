@@ -46,14 +46,18 @@ code {
 }
 
 .conversion-container{
-  display: flex;
-  align-items: center;
   width: 900px;
-  height: 200px;
   background-color: #ffffff;
   border-radius: 20px;
   border: 2px solid #dedcdc;
   box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.2);
+}
+
+.conversion-fields-wrapper{
+  display: flex;
+  align-items: center;
+  margin-top:65px;
+  z-index: ;
 }
 
 .dropdown-trigger-container{
@@ -229,17 +233,38 @@ code {
   font-family: 'Lucida Sans',sans-serif;;
 }
 
-.convert-button{
+.custom-button{
   position: absolute;
   background-color: #2f4f9b;
   width:50px;
   height: 50px;
   border-radius: 5px;
   padding: 5px;
-  transform: translateX(730px);
   box-shadow: 2px 4px 7px rgb(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.custom-button > a {
+  filter: invert(100%);
 }
 
-.convert-button > a {
-  filter: invert(100%);
+.convert-button{
+  transform: translateX(730px);
+}
+
+.swap-button{
+  transform: translateX(480px);
+  padding-top: 10px;
+}
+
+
+
+.result-container{
+  margin-top:35px;
+  display: flex;
+  z-index: 1;
+}
+.result-text{
+  font-size:2em;
+  position:absolute;
+  margin-left:170px;
 }
