@@ -2,7 +2,7 @@
 
 - Converts currency using a self-built currency exchange rate API
 
-- Visit the currency exchange rate API here
+- Visit the currency exchange rate API here --> https://github.com/iaj2/currency-exchange-rest-api
 
 - This project was aimed to learn the basics of React
 
